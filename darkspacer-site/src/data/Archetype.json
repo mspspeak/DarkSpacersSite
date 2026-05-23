@@ -1,0 +1,564 @@
+[    
+    {
+        "name": "Strong",
+        "id": 60101,
+        "description": "Grunts, teamsters, gladiators, and bodyguards. Strong characters are the muscle that carry the galaxy on their shoulders.",
+        "talents": [
+            {
+                "id": 12001,
+                "name": "Hauler",
+                "description": "Add your CON modifier, if positive, to your gear slots.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 12002,
+                "name": "Weapon Expertise",
+                "description": "Pick a category of melee weapon, like blunt weapons. You get +1 to hit and do damage with that kind of weapon.  On top of that, add half your level to those rolls (rounded down).",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 12003,                
+                "name": "Grit",
+                "description": "You have advantage on STR checks to overcome an opposing force, such as kicking open a stuck cargo hatch or pulling a robot’s arm off",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"                
+            }
+        ],
+        "firstLevelTalents": [
+           {
+                "id": 14001,
+                "name": "Strong 2",
+                "description": "Gain Weapon Expertise with one additional weapon category.",
+                "rollMin": 2,
+                "rollMax": 2,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 14002,                
+                "name": "Strong 3-6",
+                "description": "+1 to melee attacks",
+                "rollMin": 3,
+                "rollMax": 6,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 14003,                
+                "name": "Strong 7-9",
+                "description": "+2 to Strength, Dexterity, or Constitution stat",
+                "rollMin": 7,
+                "rollMax": 9,
+                "abilityScoreRule": "PlusTwoToStrDexOrCon",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 14005,                
+                "name": "Strong 10-11",
+                "description": "Choose one category of armor. You get +1 AC from that armor",
+                "rollMin": 10,
+                "rollMax": 11,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 140016,                
+                "name": "Strong 12",
+                "description": "Choose a Strong Talent or +2 points to assign to stats",
+                "rollMin": 12,
+                "rollMax": 12,
+                "abilityScoreRule": "PickPlusTwoStats",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "weapons": "All Melee weapons",
+        "armorAllowed": "All Armor",  
+        "hitPointDie": 8
+    }, 
+    {
+        "name": "Quick",
+        "id": 60102,
+        "description": "Pilots, thieves, gunslingers, and assassins. Quick characters move fast and strike with precision.",
+        "talents": [
+            {
+                "id": 190011,                
+                "name": "Quick Shot",
+                "description": "If you’re sneaky and the creature doesn’t see you coming, you get to roll extra weapon dice for damage equal to half your level (rounded down).",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 190012,                
+                "name": "Never Tell Me the Odds",
+                "description": "Start each game with a Luck Token. After you have finished a rest you get a Luck Token if you don’t already have one.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 190013,                
+                "name": "Reflexes",
+                "description": "You have advantage on DEX checks to avoid a dangerous situation, such as avoiding a laser mine or flying through an asteroid field",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "firstLevelTalents": [
+            {
+                "id": 190014,                
+                "name": "Quick 2",
+                "description": "Gain advantage on initiative rolls (re-roll if duplicate)",
+                "rollMin": 2,
+                "rollMax": 2,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 190015,                
+                "name": "Quick 3-5",
+                "description": "Your Quick Shot deals +1 dice of damage.",
+                "rollMin": 3,
+                "rollMax": 5,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 190016,                
+                "name": "Quick 6-9",
+                "description": "+2 to Dexterity, Wisdom or Charisma stat",
+                "rollMin": 6,
+                "rollMax": 9,
+                "abilityScoreRule": "PlusTwoToDexWisOrCha",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 190017,                
+                "name": "Quick 10-11",
+                "description": "+1 to ranged attacks",
+                "rollMin": 10,
+                "rollMax": 11,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 190018,                
+                "name": "Quick 12",
+                "description": "Choose a talent or +2 points to distribute to stats",
+                "rollMin": 12,
+                "rollMax": 12,
+                "abilityScoreRule": "PickPlusTwoStats",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "weapons": "Light Melee and Light Ranged Weapons",
+        "armorAllowed": "Light Armor",  
+        "hitPointDie": 6
+    }, 
+    {
+        "name": "Tough",
+        "id": 60103,
+        "description":"Soldiers, bounty hunters, scrappers, and bruisers. Tough characters are resilient and can survive a long haul.",
+        "talents": [
+            {
+                "id": 2220011,
+                "name": "Stout",
+                "description": "Start with +2 HP. Roll hit points per level with advantage.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Stout"
+            },
+            {
+                "id": 2220012,                
+                "name": "Resilient",
+                "description": "You have advantage on CON checks to resist permanent injury, disease, poison, or endure extreme environments.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2220013,                
+                "name": "Unyielding",
+                "description": ". 3/day, when you drop to 0 HP, make a DC 18 CON check. (The Resilient talent applies.) If you succeed, you tough it out and stay at 1 HP instead of going down.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "firstLevelTalents": [
+            {
+                "id": 2220014,                
+                "name": "Tough 2",
+                "description": "Deal an additional +1d4 damage when scoring a critical hit.",
+                "rollMin": 2,
+                "rollMax": 2,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2220015,                
+                "name": "Tough 3",
+                "description": "Shake it Off. 1/day, ignore all damage and effects from one attack. If you already have Shake it Off, you gain an additional use per day.",
+                "rollMin": 3,
+                "rollMax": 3,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2220016,                
+                "name": "Tough 4-6",
+                "description": "+1 to melee or ranged attacks",
+                "rollMin": 4,
+                "rollMax": 6,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2220017,                
+                "name": "Tough 7-9",
+                "description": "+2 to either Str, Dex, Con",
+                "rollMin": 7,
+                "rollMax": 9,
+                "abilityScoreRule": "PlusTwoToStrDexOrCon", 
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2220018,                
+                "name": "Tough 10-11",
+                "description": "Choose one category of armor. You get +1 AC from that armor ",
+                "rollMin": 10,
+                "rollMax": 11,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2220019,
+                "name": "Tough 12",
+                "description": "Choose a talent or +2 points to distribute to stats",
+                "rollMin": 12,
+                "rollMax": 12,
+                "abilityScoreRule": "PickPlusTwoStats",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "weapons": "Heavy Melee and Heavy Ranged Weapons",
+        "armorAllowed": "All Armor",  
+        "hitPointDie": 8        
+    },     
+    {
+        "name": "Clever",
+        "id": 60104,
+        "description":" Scientists, hackers, strategists, and inventors are clever characters who use their intellect to see the board from all angles and think outside the box when necessary",
+        "talents": [
+            {
+                "id": 2270011,
+                "name": "Languages",
+                "description": "You know two additional common languages and two rare languages.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2270012,                
+                "name": "Expert Knowledge",
+                "description": "Choose one non-combat Area of Expertise of your choosing. Try not to be too broad or too narrow (ex. Medicine is too broad, brain surgery is too narrow). Collaborate with your GM if needed. Add +1 to any rolls associated with that area of expertise.  In addition, add half your level to these rolls (round down).",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2270013,                
+                "name": "Keen Support",
+                "description": " 3/day, when an ally is about to make a non-combat roll, make a DC 9 Intelligence check. If you succeed, they can add +1d4 to their roll.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "firstLevelTalents": [
+            {
+                "id": 2270014,                
+                "name": "Clever 2",
+                "description": "Gain one additional use of Keen Support.",
+                "rollMin": 2,
+                "rollMax": 2,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2270015,                
+                "name": "Clever 3-5",
+                "description": "Gain advantage on one area of expertise you know.",
+                "rollMin": 3,
+                "rollMax": 5,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2270016,                
+                "name": "Clever 6-8",
+                "description": " +2 to Intelligence stat or +1 to Expert Knowledge checks",
+                "rollMin": 6,
+                "rollMax": 8,
+                "abilityScoreRule": "PlusTwoToIntOrPlusOneToExpertKnowledge",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2270017,                
+                "name": "Clever 9-11",
+                "description": "Learn one additional area of expertise",
+                "rollMin": 9,
+                "rollMax": 11,
+                "abilityScoreRule": "None", 
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2270018,                
+                "name": "Clever 12",
+                "description": " Choose a talent or +2 points to distribute to stats",
+                "rollMin": 12,
+                "rollMax": 12,
+                "abilityScoreRule": "PickPlusTwoStats",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "weapons": "Light Ranged Weapons",
+        "armorAllowed": "None",  
+        "hitPointDie": 4        
+    },     
+    {
+        "name": "Wise",
+        "id": 60107,
+        "description":"Mystics, sages, counselors, and monks are wise characters who can divine the true nature of the galaxy and its inhabitants, whether through supernatural means or their own focused insight. ",
+        "talents": [
+            {
+                "id": 9970011,
+                "name": "Optimization",
+                "description": "If you use a luck token, add 1d6 to the new roll.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 9970012,                
+                "name": "Enlightenment",
+                "description": "3/day, you can make a DC 9 WIS check. On a success, gain a luck token (you can’t have more than one luck token at a time).",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 9970013,                
+                "name": "Insightful Defense",
+                "description": "Add half your level (round down, minimum 1) to your AC.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "firstLevelTalents": [
+            {
+                "id": 2970014,                
+                "name": "Wise 2",
+                "description": "Riposte. 1/day (or +1 use) Deflect a successful attack. Damage attacker or  other target instead. You may gain this multiple times.",
+                "rollMin": 2,
+                "rollMax": 2,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2970015,                
+                "name": "Wise 3-6",
+                "description": "Gain an additional use of your Enlightenment talent each day.",
+                "rollMin": 3,
+                "rollMax": 6,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2970016,                
+                "name": "Wise 7-9",
+                "description": "+2 to INT, WIS, CON, stat",
+                "rollMin": 7,
+                "rollMax": 9,
+                "abilityScoreRule": "PlusTwoToIntWisCon",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2970017,                
+                "name": "Wise 10-11",
+                "description": "Increase the die category of your Optimization talent by one.",
+                "rollMin": 10,
+                "rollMax": 11,
+                "abilityScoreRule": "None", 
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 2970018,                
+                "name": "Wise 12",
+                "description": "Choose a talent or +2 points to distribute to stats.",
+                "rollMin": 12,
+                "rollMax": 12,
+                "abilityScoreRule": "PickPlusTwoStats",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "weapons": "Light Melee Weapons",
+        "armorAllowed": "None",  
+        "hitPointDie": 4        
+    },
+    {
+        "name": "Wise (With Optional Triad)",
+        "id": 60117,
+        "description":"Mystics, sages, counselors, and monks are wise characters who can divine the true nature of the galaxy and its inhabitants, whether through supernatural means or their own focused insight. ",
+        "talents": [
+            {
+                "id": 3970011,
+                "name": "Optimization",
+                "description": "If you use a luck token, add 1d6 to the new roll.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3970012,                
+                "name": "The Triad",
+                "description": "You may swap out Enlightenment for a Triad Power if your GM allows. You may gain an additional Triad Power if your species trait is already The Triad.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3970013,                
+                "name": "Insightful Defense",
+                "description": "Add half your level (round down, minimum 1) to your AC.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "firstLevelTalents": [
+            {
+                "id": 3970014,                
+                "name": "Wise 2",
+                "description": "Riposte. 1/day (or +1 use) Deflect a successful attack. Damage attacker or  other target instead. You may gain this multiple times.",
+                "rollMin": 2,
+                "rollMax": 2,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3970015,                
+                "name": "Wise 3-6",
+                "description": "Gain one additional Triad Power.",
+                "rollMin": 3,
+                "rollMax": 6,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3970016,                
+                "name": "Wise 7-9",
+                "description": "+2 to INT, WIS, CON, stat",
+                "rollMin": 7,
+                "rollMax": 9,
+                "abilityScoreRule": "PlusTwoToIntWisCon",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3970017,                
+                "name": "Wise 10-11",
+                "description": "Increase the die category of your Optimization talent by one.",
+                "rollMin": 10,
+                "rollMax": 11,
+                "abilityScoreRule": "None", 
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3970018,                
+                "name": "Wise 12",
+                "description": "Choose a talent or +2 points to distribute to stats.",
+                "rollMin": 12,
+                "rollMax": 12,
+                "abilityScoreRule": "PickPlusTwoStats",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "weapons": "Light Melee Weapons",
+        "armorAllowed": "None",  
+        "hitPointDie": 4        
+    },
+    {
+        "name": "Charming",
+        "id": 60118,
+        "description":"Scoundrels, performers, politicians, and captains. Charming characters are the leaders, smooth talkers, and deal makers who make progress and flow credits.",
+        "talents": [
+            {
+                "id": 3971211,
+                "name": "Languages",
+                "description": "You know four additional common languages and one rare language.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3971011,
+                "name": "Know a Guy",
+                "description": "Whenever you are in a populated area, you might \"know someone who knows someone\" who might be able to help you with supplies, information, repairs or whatever it is you need. Make a Charisma check DC 12 to locate a contact that might help you. You still have to compensate them for whatever services required but they are discreet and it is off the record.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3971012,                
+                "name": "Sway",
+                "description": "Make a Charisma check to sway your audience with one of the following effects. If you fail, you can’t use that effect again until you successfully rest. Motivate. DC 12. One target in NEAR gains a luck token if they do not have one. Beguile. DC 15. You transfix targets whose total levels are equal up to your level plus CHA modifier within near for 1d4 rounds. ",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3971013,                
+                "name": "Bon Vivant",
+                "description": "Groups carousing with 1 or more Charming characters add 1d6 to their rolls.",
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "firstLevelTalents": [
+            {
+                "id": 3971014,                
+                "name": "Charming 2",
+                "description": "Scoundrel’s Luck. You start each session with a Luck Token. After you have finished a rest, gain a Luck Token if you do not already have one. If you already have this Talent, start your session with one additional Luck Token. You may have multiple Luck Tokens.",
+                "rollMin": 2,
+                "rollMax": 2,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3971015,                
+                "name": "Charming 3-6",
+                "description": "+1 to melee and ranged attacks or +1 to your carousing rolls",
+                "rollMin": 3,
+                "rollMax": 6,
+                "abilityScoreRule": "None",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3971016,                
+                "name": "Charming 7-9",
+                "description": "+2 to DEX, INT, or CHA stat",
+                "rollMin": 7,
+                "rollMax": 9,
+                "abilityScoreRule": "PlusTwoToDexIntCha",
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3971017,                
+                "name": "Charming 10-11",
+                "description": "Reduce the DC of one of your Sway effects by 3",
+                "rollMin": 10,
+                "rollMax": 11,
+                "abilityScoreRule": "None", 
+                "hitPointRule": "Standard"
+            },
+            {
+                "id": 3971018,                
+                "name": "Charming 12",
+                "description": "Choose a Talent or +2 points to distribute to stats.",
+                "rollMin": 12,
+                "rollMax": 12,
+                "abilityScoreRule": "PickPlusTwoStats",
+                "hitPointRule": "Standard"
+            }
+        ],
+        "weapons": "Pistols and Blasters",
+        "armorAllowed": "Light Armor",  
+        "hitPointDie": 6        
+    }
+]

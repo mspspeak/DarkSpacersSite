@@ -1,37 +1,16 @@
 import React from 'react';
-import Button from '@mui/material/Button';
 import './App.css';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import { Container, Table, TableCell, TableRow } from '@mui/material';
+import { Container, Table, TableBody, TableCell, TableRow } from '@mui/material';
+import DesignCharacter from './views/DesignCharacter';
 
-function App() {
+
+// create a form that allows folks to create a character that 
+// puts together the data from Fighter.json 
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <ButtonGroup variant="contained" aria-label="Character Creation">
-          <Button>Design</Button>
-          <Button>Random</Button>        
-        </ButtonGroup>
-      </header>
+    <div className="App" title="Design Your Character">      
       <Container>
-        <Button>Randomly Generate Character</Button>
-        <Table>
-          <TableRow>
-            <TableCell>
-              RANDOMLY GENERATED CHARACTER HERE
-            </TableCell>
-          </TableRow>
-        </Table>
-      </Container>
-      <Container>
-      <Button>Roll Stats</Button>
-        <Table>
-          <TableRow>
-            <TableCell>
-              Rolled Stats yo!
-            </TableCell>
-          </TableRow>
-        </Table>
+        <DesignCharacter />
       </Container>
     </div>
   );

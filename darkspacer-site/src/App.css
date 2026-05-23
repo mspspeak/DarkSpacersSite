@@ -1,3 +1,23 @@
+
+@font-face {
+    font-family: "RocketRinder"; /* Choose a descriptive name for your font */
+    src: url("https://mspspeak.github.io/RocketRinder-yV5d.46eb02aaafae74d9e511.ttf") format("truetype"); /* Adjust the path to your font file */
+    font-weight: normal; /* Specify the font weight if applicable */
+    font-style: normal; /* Specify the font style if applicable */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'RocketRinder', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.hasRocket {
+  font-family: 'RocketRinder';
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +55,59 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.darkspace-select {
+  border: 1px solid #555;
+  border-radius: 4px;
+  width:400px;
+}
+
+.darkspace-select-small {
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+div.darkspace-textarea {
+  border: 1px solid #555;
+  border-radius: 4px;
+  width:400px;
+}
+
+.some-times-wider {
+  min-width: 70%;
+  max-width: 70%;
+}
+
+@media (min-width: 900px) {
+  .some-times-wider {
+    min-width: 90%;
+    max-width: 90%;
+  }
+}
+
+.ranged-cell {
+  border-bottom: 1px solid #000;
+  padding: 0px;
+  text-align: center;
+  padding-left: 5px;
+}
+
+.ranged-cell-header {
+  border-bottom: 2px solid #000;
+  padding: 0px;
+  padding-left: 5px;
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+.gimmeMargin {
+  margin-top: 3px;  
 }

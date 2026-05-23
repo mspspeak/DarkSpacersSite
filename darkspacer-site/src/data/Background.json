@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1001,
+        "rollMin": 1,
+        "rollMax": 1,
+        "name": "Street Rat",
+        "description": "You know the merciless streets of cities and villainous hives."
+    },
+    {
+        "id": 1002,
+        "rollMin": 2,
+        "rollMax": 2,
+        "name": "Outlaw",
+        "description": "You're a wanted criminal hiding from jail or worse."
+    },
+    {
+        "id": 1003,
+        "rollMin": 3,
+        "rollMax": 3,
+        "name": "Hacker",
+        "description": "Datanets are no match for you."
+    },
+    {
+        "id": 1004,
+        "rollMin": 4,
+        "rollMax": 4,
+        "name": "Operative",
+        "description": "You have crime syndicate connections, contacts, and debts."
+    },
+    {
+        "id": 1005,
+        "rollMin": 5,
+        "rollMax": 5,
+        "name": "Roughneck",
+        "description": "Mining, hauling, or salvaging, you work hard in extreme environments."
+    },
+    {
+        "id": 1006,
+        "rollMin": 6,
+        "rollMax": 6,
+        "name": "Mechanic",
+        "description": "You can fix and tinker on a device or vehicle."
+    },
+    {
+        "id": 1007,
+        "rollMin": 7,
+        "rollMax": 7,
+        "name": "Politician",
+        "description": "You navigate bureaucracy like some navigate the stars."
+    },
+    {
+        "id": 1008,
+        "rollMin": 8,
+        "rollMax": 8,
+        "name": "Fence",
+        "description": "You can appraise value and know where to find a buyer."
+    },
+    {
+        "id": 1009,
+        "rollMin": 9,
+        "rollMax": 9,
+        "name": "Gambler",
+        "description": "You can never turn down a good bet."
+    },
+    {
+        "id": 1010,
+        "rollMin": 10,
+        "rollMax": 10,
+        "name": "Corpo",
+        "description": "The ways of the corporate world are second nature to you."
+    },
+    {
+        "id": 1011,
+        "rollMin": 11,
+        "rollMax": 11,
+        "name": "Mercenary",
+        "description": "You would fight friend and foe alike for your credits."
+    },
+    {
+        "id":1012,
+        "rollMin": 12,
+        "rollMax": 12,
+        "name": "Pilot",
+        "description": "Pirate, privateer, or merchant — the stars are yours"
+    },
+    {
+        "id": 1013,
+        "rollMin": 13,
+        "rollMax": 13,
+        "name": "Acolyte",
+        "description": "You're well-trained in religious rites and doctrines"
+    },
+    {
+        "id": 1014,
+        "rollMin": 14,
+        "rollMax": 14,
+        "name": "Soldier",
+        "description": "You serve as a fighter in an organized army."
+    },
+    {
+        "id": 1015,
+        "rollMin": 15,
+        "rollMax": 15,
+        "name": "Ranger",
+        "description": "The frontier is your true home, surviving on stealth and wits."
+    },
+    {
+        "id": 1016,
+        "rollMin": 16,
+        "rollMax": 16,
+        "name": "Scientist",
+        "description": "You seek discovery through experimentation rather than study."
+    },
+    {
+        "id": 1017,
+        "rollMin": 17,
+        "rollMax": 17,
+        "name": "Celebrity",
+        "description": "You've traveled far with your charm and talent."
+    },
+    {
+        "id": 1018,
+        "rollMin": 18,
+        "rollMax": 18,
+        "name": "Academic",
+        "description": "You know much about a specific area of study."
+    },
+    {
+        "id": 1019,
+        "rollMin": 19,
+        "rollMax": 19,
+        "name": "Noble",
+        "description": "A famous name has opened many doors for you."
+    },
+    {
+        "id": 1020,
+        "rollMin": 20,
+        "rollMax": 20,
+        "name": "Medic",
+        "description": "You know anatomy, surgery, and first aid."
+    }
+]

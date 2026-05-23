@@ -1,0 +1,99 @@
+[
+    {
+        "id": 9000,
+        "name": "Ammo Clip",
+        "description": "Ammo for Projectile Weapons. Holds enough ammo until it doesn't",
+        "type": "",
+        "weight": "",
+        "value": "3",
+        "gearSlots": "1",
+        "perGearSlot": "2",
+        "isFreeToCarry": false,
+        "armorProperties": 
+            {
+            "armorClass": "",
+            "properties": []
+            }
+        ,
+        "weaponProperties": 
+            {
+                "onehandedDamage": 0,
+                "twohandedDamage": 0,
+                "category": "",
+                "range": [],
+                "properties": []
+            }        
+    },
+    {
+        "id": 9200,
+        "name": "Backpack",
+        "description": "Holds your gear. If lost, your gear is lost.",
+        "type": "",
+        "weight": "",
+        "value": "3",
+        "gearSlots": "1",
+        "perGearSlot": "1",
+        "isFreeToCarry": true,
+        "armorProperties": 
+            {
+            "armorClass": "",            
+            "properties": []
+            }
+        ,
+        "weaponProperties": 
+            {
+                "onehandedDamage": 0,
+                "twohandedDamage": 0,
+                "category": "",                
+                "range": [],
+                "properties": []
+            }        
+    },
+    {
+        "id": 9204,
+        "name": "Light Armor",
+        "description": "",
+        "type": "",
+        "weight": "",
+        "value": "25",
+        "gearSlots": "1",
+        "perGearSlot": "1",
+        "isFreeToCarry": false,
+        "armorProperties": 
+            {
+                "armorClass": "11 + Dex Mod",
+                "properties": ["Ph"]
+            },        
+        "weaponProperties": {
+                "onehandedDamage": 0,
+                "twohandedDamage": 0,
+                "category": "",                
+                "range": [],
+                "properties": []
+            }
+    },
+    {
+        "id": 9203,
+        "name": "Edged, Light",
+        "description": "",
+        "type": "",
+        "weight": "",
+        "value": "1",
+        "gearSlots": "1",
+        "perGearSlot": "1",
+        "isFreeToCarry": false,
+        "armorProperties":  {
+            "armorClass": "",            
+            "properties": []
+            },
+        "weaponProperties": 
+        {
+            "onehandedDamage": 4,
+            "twohandedDamage": 4,
+            "category": "Melee",
+            "range": ["C","N"],
+            "properties": ["Th"]
+        }
+        
+    } 
+]

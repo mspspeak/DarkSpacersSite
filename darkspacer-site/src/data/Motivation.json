@@ -1,0 +1,32 @@
+[
+    {
+        "rollMin": 1,
+        "rollMax": 1,
+        "id": 100001,
+        "name": "The Survivor",
+        "shortCode": "S",
+        "description": "The harsh realities of hirearchical dominion and economic disparity have worn down survivors. They adapt, overcome, and do whatever is necessary to survive.",
+        "startingBonus": "Roll on the Citizen Starting Equipment chart for an extra piece of gear.",
+        "gameplayEffect": "Receive a Luck Token when acting in a way that exemplifies resilience and adaptability."
+    },
+    {
+        "rollMin": 2,
+        "rollMax": 2,
+        "id": 100111,        
+        "name": "The Vile",
+        "shortCode": "VL",
+        "description": "Vile characters have embraced darker aspects such as ambition and greed. They might manipulate, betray, or take advantage of others by any means necessary.",
+        "startingBonus": "Extra 2d10 credits",
+        "gameplayEffect": "Receive a Luck Token when acting in self-interest or engaging in morally dubious actions."
+    },
+    {
+        "rollMin": 3,
+        "rollMax": 3,
+        "id": 100011,        
+        "name": "The Virtuous",
+        "shortCode": "VR",
+        "description": "Virtuous characters are guided by time-honored virtues such as courage, justice, and loyalty. They strive to act for the greater good, even in the face of personal sacrifice.",
+        "startingBonus": "1d3 trusted contacts. These can be defined before or during gameplay and will always assist your character if they are able to do so.",
+        "gameplayEffect": "Receive a Luck Token when engaging in actions that uphold their principles."
+    }
+]

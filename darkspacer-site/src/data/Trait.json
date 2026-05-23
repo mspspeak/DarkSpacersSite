@@ -1,0 +1,149 @@
+[
+    {
+        "id": 300,
+        "rollMin": 1,
+        "rollMax": 1,
+        "name": "The Triad",
+        "description": "You have the use of one Triad power."
+    },
+    {
+        "id": 301,        
+        "rollMin": 2,
+        "rollMax": 2,
+        "name": "Amphibious",
+        "description": "You can breathe water as well as air. You can swim at full speed."
+    },
+    {
+        "id": 302,        
+        "rollMin": 3,
+        "rollMax": 3,
+        "name": "Armored Skin",
+        "description": "Gain +1 to your AC when not wearing armor."
+    },
+    {
+        "id": 303,        
+        "rollMin": 4,
+        "rollMax": 4,
+        "name": "Covert Communication",
+        "description": "You can communicate secretly with others of your species or those who understand this communication."
+    },
+    {
+        "id": 304,        
+        "rollMin": 5,
+        "rollMax": 5,
+        "name": "Longsight",
+        "description": "You get a +1 bonus to ranged attack and damage rolls."
+    },
+    {
+        "id": 305,        
+        "rollMin": 6,
+        "rollMax": 6,
+        "name": "Hyperacute Senses",
+        "description": "You can't be surprised by enemies or events."
+    },
+    {
+        "id": 306,        
+        "rollMin": 7,
+        "rollMax": 7,
+        "name": "Powerful",
+        "description": "You have a +1 bonus to attack and damage rolls with melee weapons."
+    },
+    {
+        "id": 307,        
+        "rollMin": 8,
+        "rollMax": 8,
+        "name": "Natural Weapon",
+        "description": "You have a natural weapon that deals 1d6 damage. You are proficient with it."
+    },
+    {
+        "id": 308,        
+        "rollMin": 9,
+        "rollMax": 9,
+        "name": "Flight",
+        "description": "You can fly and/or walk."
+    },
+    {
+        "id": 309,        
+        "rollMin": 10,
+        "rollMax": 10,
+        "name": "Sneaky",
+        "description": "You have advantage when trying to be deceptive."
+    },
+    {
+        "id": 310,        
+        "rollMin": 11,
+        "rollMax": 11,
+        "name": "Tracking Sense",
+        "description": "Once per day, pick a target to be your quarry. You have advantage on all checks to track your quarry."
+    },
+    {
+        "id": 311,        
+        "rollMin": 12,
+        "rollMax": 12,
+        "name": "Adapted for Heat",
+        "description": "Can survive in hot environments. Half damage from fire or heat."
+    },
+    {
+        "id": 312,        
+        "rollMin": 13,
+        "rollMax": 13,
+        "name": "Adapted for Cold",
+        "description": "Can survive in cold environments. Half damage from ice or cold."
+    },
+    {
+        "id": 313,        
+        "rollMin": 14,
+        "rollMax": 14,
+        "name": "Technical Knack",
+        "description": "You get a +1 bonus when working with technology and machines."
+    },
+    {
+        "id": 314,        
+        "rollMin": 15,
+        "rollMax": 15,
+        "name": "Natural Connection",
+        "description": "You get a +1 bonus when working with plants and animals."
+    },
+    {
+        "id": 315,        
+        "rollMin": 16,
+        "rollMax": 16,
+        "name": "Radiation Resistant",
+        "description": "Can survive in radioactive environments. Half damage from radiation or electricity."
+    },
+    {
+        "id": 316,        
+        "rollMin": 17,
+        "rollMax": 17,
+        "name": "Filtration",
+        "description": "Can survive in toxic environments. Half damage from poison."
+    },
+    {
+        "id": 317,        
+        "rollMin": 18,
+        "rollMax": 18,
+        "name": "Natural Climber",
+        "description": "Full speed for climbing. Reduce climbing DC by one category."
+    },
+    {
+        "id": 318,        
+        "rollMin": 19,
+        "rollMax": 19,
+        "name": "Extra Arms",
+        "description": "Can take one extra non-attack action per turn. Increase gear slots by 2."
+    },
+    {
+        "id": 319,        
+        "rollMin": 20,
+        "rollMax": 20,
+        "name": "Extra Legs",
+        "description": "Can move up to Near twice in a turn in addition to their action. DC to be tripped increased by one category"
+    },
+    {
+        "id": 320,        
+        "rollMin": 21,
+        "rollMax": 21,
+        "name": "Ambitious",
+        "description": "You gain one additional Archetype talent roll at 1st level."
+    }
+]
