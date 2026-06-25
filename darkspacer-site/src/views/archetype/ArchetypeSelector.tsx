@@ -284,7 +284,14 @@ const ArchetypeSelector: React.FC = () => {
                 } else {
                   dispatch(setUsingOptionalRules([]));
                 }
-              }} />
+              }} 
+              sx={{
+                color: '#000', // Color when unchecked
+                '&.Mui-checked': {
+                  color: '#000', // Color when checked
+                },
+              }}              
+              />
               {vm.usingOptionalRules ? 'Yes' : 'No'}
             </Typography>
           </Grid>
