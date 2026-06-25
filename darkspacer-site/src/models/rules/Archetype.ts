@@ -1,4 +1,5 @@
 import { Talent } from "./Talent"
+import { OptionalRule } from "./OptionalRule"
 
 export class Archetype {
     Id: number;
@@ -9,6 +10,7 @@ export class Archetype {
     Weapons: string;
     ArmorAllowed: string;    
     HitPointDie: number;
+    OptionalRules: OptionalRule[];
 
     constructor(
         id: number,
@@ -18,7 +20,8 @@ export class Archetype {
         firstLevelTalents: Talent[],
         weapons: string, 
         armorAllowed: string, 
-        hitPointDie: number) {
+        hitPointDie: number,
+        optionalRules: OptionalRule[]) {
         this.Id = id;
         this.Name = name;     
         this.Description = description;   
@@ -27,9 +30,10 @@ export class Archetype {
         this.Weapons = weapons;
         this.ArmorAllowed = armorAllowed;
         this.HitPointDie = hitPointDie;
+        this.OptionalRules = optionalRules;
     }
 
-    public static FromObject(obj: any): Archetype {
+    public static FromObject(obj: any): Archetype {                
         return new Archetype(
             obj.id,
             obj.name, 
@@ -38,7 +42,8 @@ export class Archetype {
             obj.firstLevelTalents.map(Talent.FromObject),                
             obj.weapons, 
             obj.armorAllowed, 
-            obj.hitPointDie
+            obj.hitPointDie,
+            obj.optionalRules.map(OptionalRule.FromObject)
         );
-    }    
+    }   
 }

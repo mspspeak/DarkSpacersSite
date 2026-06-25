@@ -66,7 +66,8 @@ import {
   setArchetypeId, 
   setArchetypeTalentAddId, 
   setArchetypeTalentId, 
-  setHitPoints 
+  setHitPoints, 
+  setUsingOptionalRules
 } from '../slices/archetypeSlice';
 import { ArchetypeStateGenerator } from '../slices/ArchetypeStateGenerator';
 import { CharacterBackgroundStateGenerator } from '../slices/CharacterBackgroundStateGenerator';
@@ -144,6 +145,7 @@ const DesignCharacter: React.FC = () => {
     dispatch(setAbilityScoreRaisedByPlusOneRule1Add(generatedArchetypeState.abilityScoreRaisedByPlusOneRule1Add));
     dispatch(setAbilityScoreRaisedByPlusOneRule2Add(generatedArchetypeState.abilityScoreRaisedByPlusOneRule2Add));
     dispatch(setHitPoints([generatedArchetypeState.hitPoints, generatedArchetypeState.hitPoints2]));  
+    dispatch(setUsingOptionalRules(generatedArchetypeState.usingOptionalRules));
 
     const generatedCharacterBackgroundState: CharacterBackgroundState = 
       CharacterBackgroundStateGenerator.generateNew(characterBackgroundState);

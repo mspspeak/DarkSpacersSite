@@ -17,6 +17,8 @@ import { AbilityScoresState } from "../../slices/abilityScoresSlice";
 import { CharacterBackgroundState } from "../../slices/characterBackgroundsSlice";
 import { CharacterSpeciesState } from "../../slices/characterSpeciesSlice";
 import { ArchetypeState } from "../../slices/archetypeSlice";
+import { ArchetypeRules } from '../../utils/ArchetypeRules';
+
 
 export class CalculatedCharacter {
 
@@ -94,12 +96,15 @@ export class CalculatedCharacter {
         this.archetypeId = archetypeState.archetypeId;
         this.archetypeTalentId = archetypeState.archetypeTalentId;
         this.archetypeTalentAddId = archetypeState.archetypeTalentAddId;
+        
         this.hitPoints = archetypeState.hitPoints;
         this.hitPoints2 = archetypeState.hitPoints2;
+        
+        const usingOptionalRules: number[] = archetypeState.usingOptionalRules;
         const archetypes = ArchetypeRepository.getAll();  
         this.selectedArchetype = archetypes.find((archetype : Archetype ) => archetype.Id === this.archetypeId) || null;
-        this.selectedArchetypeFirstLevelTalents = this.selectedArchetype ? this.selectedArchetype.FirstLevelTalents : [];
-        this.selectedArchetypeTalents = this.selectedArchetype ? this.selectedArchetype.Talents : [];        
+        this.selectedArchetypeFirstLevelTalents = this.selectedArchetype ? ArchetypeRules.GetFirstLevelTalents(this.selectedArchetype, usingOptionalRules) : [];
+        this.selectedArchetypeTalents = this.selectedArchetype ? ArchetypeRules.GetTalents(this.selectedArchetype, usingOptionalRules) : [];        
         this.selectedArchetypeFirstLevelTalent = this.archetypeTalentId ? this.selectedArchetypeFirstLevelTalents.find(talent => talent.Id === this.archetypeTalentId) : null;  
         this.selectedArchetypeFirstLevelTalentAdd = this.archetypeTalentAddId ? this.selectedArchetypeFirstLevelTalents.find(talent => talent.Id === this.archetypeTalentAddId) : null;  
         

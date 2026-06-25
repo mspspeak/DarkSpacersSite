@@ -12,7 +12,8 @@ export interface ArchetypeState {
   abilityScoreRaisedByPlusOneRule2: BonusType | null;
   abilityScoreRaisedByPlusTwoRuleAdd: BonusType | null;
   abilityScoreRaisedByPlusOneRule1Add: BonusType | null;
-  abilityScoreRaisedByPlusOneRule2Add: BonusType | null;  
+  abilityScoreRaisedByPlusOneRule2Add: BonusType | null;
+  usingOptionalRules: number[];  
 }
 
 const initialState: ArchetypeState = {
@@ -26,7 +27,8 @@ const initialState: ArchetypeState = {
   abilityScoreRaisedByPlusOneRule2: null,
   abilityScoreRaisedByPlusTwoRuleAdd: null,
   abilityScoreRaisedByPlusOneRule1Add: null,
-  abilityScoreRaisedByPlusOneRule2Add: null  
+  abilityScoreRaisedByPlusOneRule2Add: null,
+  usingOptionalRules: []  
 }
 
 // Create the slice and pass in the initial state
@@ -64,6 +66,9 @@ const archetypeSlice = createSlice({
     },
     setAbilityScoreRaisedByPlusOneRule2Add: (state, action: PayloadAction<BonusType | null>) => {
       state.abilityScoreRaisedByPlusOneRule2Add = action.payload;
+    },
+    setUsingOptionalRules: (state, action: PayloadAction<number[]>) => {
+      state.usingOptionalRules = action.payload;
     }
   }
 })
@@ -78,7 +83,8 @@ export const {
   setAbilityScoreRaisedByPlusOneRule2, 
   setAbilityScoreRaisedByPlusTwoRuleAdd, 
   setAbilityScoreRaisedByPlusOneRule1Add, 
-  setAbilityScoreRaisedByPlusOneRule2Add 
+  setAbilityScoreRaisedByPlusOneRule2Add,
+  setUsingOptionalRules
 } = archetypeSlice.actions
 
 // Export the generated reducer function
