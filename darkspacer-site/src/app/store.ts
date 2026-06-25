@@ -13,8 +13,8 @@ export const store = configureStore({
     characterState: characterReducer,
     characterNameState: characterNameReducers,
     abilityScoresState: abilityScoresReducer,
-    characterSpeciesState: characterSpeciesReducer,
-    archetypeState: archetypeReducer
+    archetypeState: archetypeReducer,
+    characterSpeciesState: characterSpeciesReducer    
   }
 })
 

@@ -1,6 +1,6 @@
 // component for selecting an archetype for a character
 import React from 'react';
-import { Container, Grid, MenuItem, Select, Typography } from '@mui/material';
+import { Container, Grid, MenuItem, Select, Typography, Checkbox } from '@mui/material';
 import { Archetype } from '../../models/rules/Archetype';
 import { useTranslation } from 'react-i18next';
 import { ArchetypeRepository } from '../../repository/ArchetypeRepository';
@@ -15,12 +15,26 @@ import ChooseTalentOrPickTwoPlusOneSelector from './ChooseTalentOrPickTwoPlusOne
 import { GameMath } from '../../utils/GameMath';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { RootState } from '../../app/store';
-import { ArchetypeState, setAbilityScoreRaisedByPlusOneRule1, setAbilityScoreRaisedByPlusOneRule1Add, setAbilityScoreRaisedByPlusOneRule2, setAbilityScoreRaisedByPlusOneRule2Add, setAbilityScoreRaisedByPlusTwoRule, setAbilityScoreRaisedByPlusTwoRuleAdd, setArchetypeId, setArchetypeTalentAddId, setArchetypeTalentId, setHitPoints } from '../../slices/archetypeSlice';
+import { 
+  ArchetypeState, 
+  setAbilityScoreRaisedByPlusOneRule1, 
+  setAbilityScoreRaisedByPlusOneRule1Add, 
+  setAbilityScoreRaisedByPlusOneRule2, 
+  setAbilityScoreRaisedByPlusOneRule2Add, 
+  setAbilityScoreRaisedByPlusTwoRule, 
+  setAbilityScoreRaisedByPlusTwoRuleAdd, 
+  setArchetypeId, 
+  setArchetypeTalentAddId, 
+  setArchetypeTalentId, 
+  setHitPoints, 
+  setUsingOptionalRules } from '../../slices/archetypeSlice';
 import { TraitRules } from '../../utils/TraitRules';
 import { RandomSelector } from '../../utils/RandomSelector';
 import { RandomNumberGenerator } from '../../generators/RandomNumberGenerator';
+import { ArchetypeRules } from '../../utils/ArchetypeRules';
+import { Check } from '@mui/icons-material';
 
-const generateViewModel:any = (archetypeTalentId: number | null, archetypeTalentAddId: number | null, selectedArchetype: Archetype, archetypes: Archetype[]) => {
+const generateViewModel:any = (archetypeTalentId: number | null, archetypeTalentAddId: number | null, selectedArchetype: Archetype, archetypes: Archetype[], usingOptionalRules: number[] ) => {
   if (!selectedArchetype) {
     return {
       "selectedArchetype": {
@@ -45,10 +59,16 @@ const generateViewModel:any = (archetypeTalentId: number | null, archetypeTalent
       "hasPickPlusTwoStatsRuleAdd": false,
       "hasAddPlusTwoRuleAdd": false,
       "abiltyScorePlusTwoRuleAdd": null,
+      "archeTypeHasOptions": false,
+      "usingOptionalRules": false,
+      "optionalRule": null  
     };
   } else {
-    const selectedArchetypeFirstLevelTalents = selectedArchetype ? selectedArchetype.FirstLevelTalents : [];
-    const selectedArchetypeTalents = selectedArchetype ? selectedArchetype.Talents : [];
+    const selectedArchetypeHasOptions = selectedArchetype.OptionalRules.length > 0;
+    const isUsingOptionalRules = usingOptionalRules.length > 0;    
+    
+    const selectedArchetypeFirstLevelTalents = selectedArchetype ? ArchetypeRules.GetFirstLevelTalents(selectedArchetype, usingOptionalRules) : [];
+    const selectedArchetypeTalents = selectedArchetype ? ArchetypeRules.GetTalents(selectedArchetype, usingOptionalRules) : [];
     const selectedArchetypeFirstLevelTalent : Talent | null |undefined = archetypeTalentId ? selectedArchetypeFirstLevelTalents.find(talent => talent.Id === archetypeTalentId) : null;  
     const selectedArchetypeFirstLevelTalentAdd : Talent | null |undefined = archetypeTalentAddId ? selectedArchetypeFirstLevelTalents.find(talent => talent.Id === archetypeTalentAddId) : null;  
     
@@ -80,6 +100,9 @@ const generateViewModel:any = (archetypeTalentId: number | null, archetypeTalent
       "hasPickPlusTwoStatsRuleAdd": hasPickPlusTwoStatsRuleAdd,
       "hasAddPlusTwoRuleAdd": hasAddPlusTwoRuleAdd,
       "abiltyScorePlusTwoRuleAdd": abiltyScorePlusTwoRuleAdd,
+      "archeTypeHasOptions": selectedArchetypeHasOptions,
+      "usingOptionalRules": isUsingOptionalRules,
+      "optionalRule": selectedArchetypeHasOptions ? ArchetypeRules.GetOptionalRule(selectedArchetype) : null  
     };
   }
 
@@ -106,11 +129,11 @@ const ArchetypeSelector: React.FC = () => {
   const hitPoints: number = archetypeState.hitPoints;
   const hitPoints2: number = archetypeState.hitPoints2;
   const characterCon: number = characterAbilityScoresState.characterCon;
-
+  const usingOptionalRules: number[] = archetypeState.usingOptionalRules;
 
   const archetypes = ArchetypeRepository.getAll();
   const selectedArchetype = archetypes.find((archetype) => archetype.Id === archetypeId) || ''
-  const vm = generateViewModel(archetypeTalentId, archetypeTalentAddId, selectedArchetype, archetypes);
+  const vm = generateViewModel(archetypeTalentId, archetypeTalentAddId, selectedArchetype, archetypes, usingOptionalRules);
 
   const conModValue = GameMath.AbilityScoreToModifier(characterCon);
   const conMod = GameMath.AbilityScoreToModifierString(characterCon);
@@ -143,14 +166,14 @@ const ArchetypeSelector: React.FC = () => {
   const randomlyPickArchetypeTalent = (selectedArchetypeId: number | null) => {
     console.log('get talent for archetype:', selectedArchetypeId, archetypeState.archetypeId);
     const archetypeId = selectedArchetypeId || archetypeState.archetypeId;
-    const archetypeTalentId = RandomSelector.SelectArchetypeTalentIdFromArchetype(archetypeId);
+    const archetypeTalentId = RandomSelector.SelectArchetypeTalentIdFromArchetype(archetypeId, archetypeState.usingOptionalRules);
     dispatch(setArchetypeTalentId(archetypeTalentId));
   }
 
   const randomlyPickArchetypeTalentAdd = (selectedArchetypeId: number | null) => {
     console.log('get talent for archetype:', selectedArchetypeId, archetypeState.archetypeId);
     const archetypeId = selectedArchetypeId || archetypeState.archetypeId;
-    const archetypeTalentId = RandomSelector.SelectArchetypeTalentIdFromArchetype(archetypeId);    
+    const archetypeTalentId = RandomSelector.SelectArchetypeTalentIdFromArchetype(archetypeId, archetypeState.usingOptionalRules);    
     dispatch(setArchetypeTalentAddId(archetypeTalentId));
   }
 
@@ -159,7 +182,7 @@ const ArchetypeSelector: React.FC = () => {
   }  
 
   const randomlyPickAbilityScoreRaisedByPlusTwoRule = () => {
-    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentId);  
+    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentId, archetypeState.usingOptionalRules);  
     handleSelectAbilityScoreRaisedByPlusTwoRule(abilityScoreType || null);
   }
 
@@ -168,7 +191,7 @@ const ArchetypeSelector: React.FC = () => {
   }
 
   const randomlyPickAbilityScoreRaisedByPlusTwoRuleAdd = () => {
-    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentAddId);  
+    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentAddId, archetypeState.usingOptionalRules);  
     handleSelectAbilityScoreRaisedByPlusTwoRuleAdd(abilityScoreType || null);
   }  
 
@@ -181,12 +204,12 @@ const ArchetypeSelector: React.FC = () => {
   }
 
   const randomlyPickAbilityScoreRaisedByPlusOneRule1 = () => {
-    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentId);  
+    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentId, archetypeState.usingOptionalRules);  
     handleSelectAbilityScoreRaisedByPlusOneRule1(abilityScoreType || null);
   }
 
   const randomlyPickAbilityScoreRaisedByPlusOneRule1Add = () => {
-    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentAddId);  
+    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentAddId, archetypeState.usingOptionalRules);  
     handleSelectAbilityScoreRaisedByPlusOneRule1Add(abilityScoreType || null);
   }
 
@@ -199,12 +222,12 @@ const ArchetypeSelector: React.FC = () => {
   }
 
   const randomlyPickAbilityScoreRaisedByPlusOneRule2 = () => {
-    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentId);
+    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentId, archetypeState.usingOptionalRules);
     handleSelectAbilityScoreRaisedByPlusOneRule2(abilityScoreType || null);
   }
 
   const randomlyPickAbilityScoreRaisedByPlusOneRule2Add = () => {
-    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentAddId);
+    const abilityScoreType = RandomSelector.SelectAbilityScoreFromRuleOnTalent(archetypeState.archetypeId, archetypeState.archetypeTalentAddId, archetypeState.usingOptionalRules);
     handleSelectAbilityScoreRaisedByPlusOneRule2Add(abilityScoreType || null);
   }
 
@@ -247,7 +270,25 @@ const ArchetypeSelector: React.FC = () => {
               </MenuItem>
             ))}
           </Select>
-        </Grid>        
+        </Grid>
+        {
+          vm.archeTypeHasOptions &&
+          <Grid size={{ xs: 12, md: 12 }}>
+            <Typography variant="body1" gutterBottom>
+              <strong>Optional - { vm.optionalRule ? vm.optionalRule.Name : '' }:</strong> 
+              <Checkbox checked={vm.usingOptionalRules} onChange={(e) => {
+                const isChecked = e.target.checked;
+                console.log('Optional rule checkbox change:', isChecked);
+                if (isChecked) {
+                  dispatch(setUsingOptionalRules([vm.optionalRule?.Id || 0]));
+                } else {
+                  dispatch(setUsingOptionalRules([]));
+                }
+              }} />
+              {vm.usingOptionalRules ? 'Yes' : 'No'}
+            </Typography>
+          </Grid>
+        }        
         {vm.selectedArchetype.Id !== 0 && 
           <>
             <Grid size={{ xs: 12, md: 6 }}>

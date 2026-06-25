@@ -75,7 +75,8 @@
         ],
         "weapons": "All Melee weapons",
         "armorAllowed": "All Armor",  
-        "hitPointDie": 8
+        "hitPointDie": 8,
+        "optionalRules": []        
     }, 
     {
         "name": "Quick",
@@ -153,7 +154,8 @@
         ],
         "weapons": "Light Melee and Light Ranged Weapons",
         "armorAllowed": "Light Armor",  
-        "hitPointDie": 6
+        "hitPointDie": 6,
+        "optionalRules":[]
     }, 
     {
         "name": "Tough",
@@ -240,7 +242,8 @@
         ],
         "weapons": "Heavy Melee and Heavy Ranged Weapons",
         "armorAllowed": "All Armor",  
-        "hitPointDie": 8        
+        "hitPointDie": 8,
+        "optionalRules":[]        
     },     
     {
         "name": "Clever",
@@ -318,7 +321,8 @@
         ],
         "weapons": "Light Ranged Weapons",
         "armorAllowed": "None",  
-        "hitPointDie": 4        
+        "hitPointDie": 4,
+        "optionalRules":[]        
     },     
     {
         "name": "Wise",
@@ -396,85 +400,31 @@
         ],
         "weapons": "Light Melee Weapons",
         "armorAllowed": "None",  
-        "hitPointDie": 4        
-    },
-    {
-        "name": "Wise (With Optional Triad)",
-        "id": 60117,
-        "description":"Mystics, sages, counselors, and monks are wise characters who can divine the true nature of the galaxy and its inhabitants, whether through supernatural means or their own focused insight. ",
-        "talents": [
+        "hitPointDie": 4,
+        "optionalRules": [
             {
-                "id": 3970011,
-                "name": "Optimization",
-                "description": "If you use a luck token, add 1d6 to the new roll.",
-                "abilityScoreRule": "None",
-                "hitPointRule": "Standard"
-            },
-            {
-                "id": 3970012,                
-                "name": "The Triad",
-                "description": "You may swap out Enlightenment for a Triad Power if your GM allows. You may gain an additional Triad Power if your species trait is already The Triad.",
-                "abilityScoreRule": "None",
-                "hitPointRule": "Standard"
-            },
-            {
-                "id": 3970013,                
-                "name": "Insightful Defense",
-                "description": "Add half your level (round down, minimum 1) to your AC.",
-                "abilityScoreRule": "None",
-                "hitPointRule": "Standard"
+                "id": 333001,
+                "name":"The Triad",
+                "alternateTalentReplacesId": 9970012,
+                "alternateTalent": {
+                    "id": 3970012,                
+                    "name": "The Triad",
+                    "description": "You may swap out Enlightenment for a Triad Power if your GM allows. You may gain an additional Triad Power if your species trait is already The Triad.",
+                    "abilityScoreRule": "None",
+                    "hitPointRule": "Standard"                    
+                },
+                "alternateFirstLevelTalentReplacesId": 2970015,
+                "alternateFirstLevelTalent": {
+                    "id": 3970015,                
+                    "name": "Wise 3-6",
+                    "description": "Gain one additional Triad Power.",
+                    "rollMin": 3,
+                    "rollMax": 6,
+                    "abilityScoreRule": "None",
+                    "hitPointRule": "Standard"
+                } 
             }
-        ],
-        "firstLevelTalents": [
-            {
-                "id": 3970014,                
-                "name": "Wise 2",
-                "description": "Riposte. 1/day (or +1 use) Deflect a successful attack. Damage attacker or  other target instead. You may gain this multiple times.",
-                "rollMin": 2,
-                "rollMax": 2,
-                "abilityScoreRule": "None",
-                "hitPointRule": "Standard"
-            },
-            {
-                "id": 3970015,                
-                "name": "Wise 3-6",
-                "description": "Gain one additional Triad Power.",
-                "rollMin": 3,
-                "rollMax": 6,
-                "abilityScoreRule": "None",
-                "hitPointRule": "Standard"
-            },
-            {
-                "id": 3970016,                
-                "name": "Wise 7-9",
-                "description": "+2 to INT, WIS, CON, stat",
-                "rollMin": 7,
-                "rollMax": 9,
-                "abilityScoreRule": "PlusTwoToIntWisCon",
-                "hitPointRule": "Standard"
-            },
-            {
-                "id": 3970017,                
-                "name": "Wise 10-11",
-                "description": "Increase the die category of your Optimization talent by one.",
-                "rollMin": 10,
-                "rollMax": 11,
-                "abilityScoreRule": "None", 
-                "hitPointRule": "Standard"
-            },
-            {
-                "id": 3970018,                
-                "name": "Wise 12",
-                "description": "Choose a talent or +2 points to distribute to stats.",
-                "rollMin": 12,
-                "rollMax": 12,
-                "abilityScoreRule": "PickPlusTwoStats",
-                "hitPointRule": "Standard"
-            }
-        ],
-        "weapons": "Light Melee Weapons",
-        "armorAllowed": "None",  
-        "hitPointDie": 4        
+        ]         
     },
     {
         "name": "Charming",
@@ -559,6 +509,7 @@
         ],
         "weapons": "Pistols and Blasters",
         "armorAllowed": "Light Armor",  
-        "hitPointDie": 6        
+        "hitPointDie": 6,
+        "optionalRules":[]
     }
 ]

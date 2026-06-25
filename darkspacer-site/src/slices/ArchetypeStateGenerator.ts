@@ -5,6 +5,7 @@ import { Archetype } from "../models/rules/Archetype";
 import { BonusType } from "../models/rules/BonusType";
 import { Talent } from "../models/rules/Talent";
 import { ArchetypeRepository } from "../repository/ArchetypeRepository";
+import { ArchetypeRules } from "../utils/ArchetypeRules";
 import { BonusRules } from "../utils/BonusRules";
 import { ArchetypeState } from "./archetypeSlice";
 
@@ -16,8 +17,14 @@ export class ArchetypeStateGenerator {
         
         const generatedArchetype: Archetype = ThingPicker.Pick<Archetype>(ArchetypeRepository.getAll())!;
         generatedArchetypeState.archetypeId = generatedArchetype.Id;
-        
-        const firstLevelTalent = RangedThingPicker.Pick<Talent>(generatedArchetype.FirstLevelTalents || [])
+
+        const optionalRulesIds = generatedArchetype.OptionalRules.map(rule => rule.Id);
+        generatedArchetypeState.usingOptionalRules = ThingPicker.Pick<number[]>(
+            [optionalRulesIds, []]) || [];
+        console.log("ops", optionalRulesIds, generatedArchetypeState.usingOptionalRules);    
+
+        const firstLevelTalents = ArchetypeRules.GetFirstLevelTalents(generatedArchetype, generatedArchetypeState.usingOptionalRules);        
+        const firstLevelTalent = RangedThingPicker.Pick<Talent>(firstLevelTalents);
         generatedArchetypeState.archetypeTalentId = firstLevelTalent?.Id || null;
 
         const hasAddPlusTwoRule = BonusRules.hasAddPlusTwoRule(generatedArchetype, firstLevelTalent);

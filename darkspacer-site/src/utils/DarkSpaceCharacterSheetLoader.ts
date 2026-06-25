@@ -75,7 +75,7 @@ export class DarkSpaceCharacterSheetLoader {
     }
 
     private static buildTalentsTraitsString(calc: CalculatedCharacter): string {
-        const Archetype = ArchetypeRepository.getAll().find(a => a.Id === calc.archetypeId!)
+        const Archetype = calc.selectedArchetype; // ArchetypeRepository.getAll().find(a => a.Id === calc.archetypeId!)
         const talentsTraitsList: string[] = [];
 
         if (calc.selectedBackground) {
@@ -85,11 +85,11 @@ export class DarkSpaceCharacterSheetLoader {
 
         if (Archetype) {
             talentsTraitsList.push(`Archetype: ${Archetype.Name}`);
-            Archetype.Talents.forEach(talent => {
+            calc.selectedArchetypeTalents.forEach(talent => {
                 talentsTraitsList.push(`${talent.Name} - ${talent.Description}`);
             });
             
-            const firstLevelTalent = Archetype.FirstLevelTalents.find(t => t.Id === calc.archetypeTalentId!)
+            const firstLevelTalent = calc.selectedArchetypeFirstLevelTalent; // Archetype.FirstLevelTalents.find(t => t.Id === calc.archetypeTalentId!)
             if (firstLevelTalent) {                
                 if (BonusRules.hasAddPlusTwoRule(Archetype, firstLevelTalent)) {
                     talentsTraitsList.push(`${firstLevelTalent.Name} - ${firstLevelTalent.Description} (${GamingLingo.getBonusNameFromString(calc.abilityScoreRaisedByPlusTwoRule)})`);
@@ -100,7 +100,7 @@ export class DarkSpaceCharacterSheetLoader {
                 }
             }
 
-            const firstLevelTalentAdd = Archetype.FirstLevelTalents.find(t => t.Id === calc.archetypeTalentAddId!)
+            const firstLevelTalentAdd = calc.selectedArchetypeFirstLevelTalentAdd; // Archetype.FirstLevelTalents.find(t => t.Id === calc.archetypeTalentAddId!)
             if (firstLevelTalentAdd) {                
                 if (BonusRules.hasAddPlusTwoRule(Archetype, firstLevelTalentAdd)) {
                     talentsTraitsList.push(`${firstLevelTalentAdd.Name} - ${firstLevelTalentAdd.Description} (${GamingLingo.getBonusNameFromString(calc.abilityScoreRaisedByPlusTwoRuleAdd)})`);
